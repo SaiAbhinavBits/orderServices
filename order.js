@@ -1,6 +1,22 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3500;
+
+
+// const uri = "mongodb+srv://Abhinav:AbhiMongo@cluster0.ojubk3r.mongodb.net/?retryWrites=true&w=majority"
+// const client = new mongose.connect(uri);
+// async function connect() {
+//   try {
+//     await client;
+//     console.log("connected to mongoDB");
+  
+
+//   } catch(error){
+//      console.error(error);
+//   }
+// }
+// connect();
+
 app.listen(port, () => {
  console.log(`running at port ${port}`);
 });
@@ -18,6 +34,16 @@ app.post("/new_order", (req, res) => {
     id: new_orders.length + 1,
     date: Date.now().toString()
     });
+    // for (let od of new_orders) {
+    //   async function createListing(client, od){
+    //     const result = await client.db("orderServices").collection("orderCollection").insertOne(od);
+    //     console.log(`New listing created with the following id: ${result.insertedId}`);
+    //   }
+
+    // }
+
+
+
     console.log();
     
   
